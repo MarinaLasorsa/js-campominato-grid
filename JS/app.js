@@ -62,6 +62,23 @@ buttonPlayElement.addEventListener("click", function(){
 })
 
 
+/*ESERCIZIO:
+Aggiungere una select accanto al bottone di generazione, 
+che fornisca una scelta tra tre diversi livelli di difficoltà*/
+
+
+//Recuperare elemento select
+
+//Dichiarare variabile difficoltà con la value dell'elemento select
+
+//inserire tutto ciò che ho in event listener per il bottone play in una funzione
+//funzione ha in ingresso la variabile lato
+
+//in event listener,
+//SE variabile difficoltà = "hard", allora evoco la funzione con 10
+//ALTRIMENTI SE variabile difficoltà = "normal", evoco la funzione con 9
+//ALTRIMENTI evoco la funzione con 7
+
 
 
 
