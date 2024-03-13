@@ -20,13 +20,13 @@ const buttonPlayElement = document.querySelector(".button-play");
 const selectTagElement = document.getElementById("difficulty")
 //console.log(selectTagElement);
 
-//Dichiarare variabile difficoltà con la value dell'elemento select
-let difficulty = selectTagElement.value;
-//console.log(difficulty);
-
 //Aggiungere un event listener al click del bottone
 
 buttonPlayElement.addEventListener("click", function(){
+
+    //Dichiarare variabile difficoltà con la value dell'elemento select
+    let difficulty = selectTagElement.value;
+    //console.log(difficulty);
 
     //in event listener,
     //SE variabile difficoltà = "hard", 
