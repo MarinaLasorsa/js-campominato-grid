@@ -18,6 +18,9 @@ buttonPlayElement.addEventListener("click", function(){
     const gridElement = document.querySelector(".grid");
     //console.log(gridElement);
 
+    //Svuotare la griglia prima di riempirla (in caso di secondo click)
+    gridElement.innerHTML = '';
+
     //Dichiarare variabile lato griglia
     let gridSide = 10;
     //console.log(gridSide);
