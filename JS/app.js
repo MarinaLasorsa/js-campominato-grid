@@ -5,15 +5,53 @@ Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro 
 ed emetto un messaggio in console con il numero della cella cliccata.*/
 
+/*ESERCIZIO:
+Aggiungere una select accanto al bottone di generazione, 
+che fornisca una scelta tra tre diversi livelli di difficoltà*/
+
+
+
 //Recuperare elemento bottone play
 
 const buttonPlayElement = document.querySelector(".button-play");
 //console.log(buttonPlayElement);
 
+//Recuperare elemento select
+const selectTagElement = document.getElementById("difficulty")
+//console.log(selectTagElement);
+
+//Dichiarare variabile difficoltà con la value dell'elemento select
+let difficulty = selectTagElement.value;
+//console.log(difficulty);
+
 //Aggiungere un event listener al click del bottone
 
 buttonPlayElement.addEventListener("click", function(){
 
+    //in event listener,
+    //SE variabile difficoltà = "hard", 
+    if (difficulty === "hard") {
+        //allora evoco la funzione con 10
+        createGrid(10);
+    }
+    //ALTRIMENTI SE variabile difficoltà = "normal", 
+    else if (difficulty === "normal") {
+        //evoco la funzione con 9
+        createGrid(9);
+    }
+    //ALTRIMENTI evoco la funzione con 7
+    else {
+        createGrid(7);
+    }
+
+})
+
+
+//inserire tutto ciò che avevo in event listener per il bottone play in una funzione
+//funzione ha in ingresso la variabile lato
+
+function createGrid(gridSide) {
+    
     //Recuperare elemento griglia con querySelector
     const gridElement = document.querySelector(".grid");
     //console.log(gridElement);
@@ -21,8 +59,8 @@ buttonPlayElement.addEventListener("click", function(){
     //Svuotare la griglia prima di riempirla (in caso di secondo click)
     gridElement.innerHTML = '';
 
-    //Dichiarare variabile lato griglia
-    let gridSide = 10;
+    //Dichiarare variabile lato griglia (non più ora che è una funzione)
+    //let gridSide = 10;
     //console.log(gridSide);
 
     //Calcolare variabile numero di celle facendo lato x lato
@@ -38,8 +76,9 @@ buttonPlayElement.addEventListener("click", function(){
         //Creare elemento div con createElement
         const divCellElement = document.createElement("div");
 
-        //dargli classe "cell"
+        //dargli classe "cell" e classe larghezza per il suo lato
         divCellElement.classList.add("cell");
+        divCellElement.classList.add(`width-${gridSide}`);
 
         //inserire numero in elemento
         divCellElement.innerHTML = `${num}`
@@ -56,28 +95,23 @@ buttonPlayElement.addEventListener("click", function(){
             //(toggle per aggiungerlo e toglierlo al click)
             divCellElement.classList.toggle("bg-dark");
 
+            console.log(num);
+
         })
     }
-
-})
-
-
-/*ESERCIZIO:
-Aggiungere una select accanto al bottone di generazione, 
-che fornisca una scelta tra tre diversi livelli di difficoltà*/
+}
 
 
-//Recuperare elemento select
 
-//Dichiarare variabile difficoltà con la value dell'elemento select
 
-//inserire tutto ciò che ho in event listener per il bottone play in una funzione
-//funzione ha in ingresso la variabile lato
 
-//in event listener,
-//SE variabile difficoltà = "hard", allora evoco la funzione con 10
-//ALTRIMENTI SE variabile difficoltà = "normal", evoco la funzione con 9
-//ALTRIMENTI evoco la funzione con 7
+
+
+
+
+
+
+
 
 
 
