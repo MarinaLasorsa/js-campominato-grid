@@ -7,28 +7,75 @@ ed emetto un messaggio in console con il numero della cella cliccata.*/
 
 //Recuperare elemento bottone play
 
+const buttonPlayElement = document.querySelector(".button-play");
+//console.log(buttonPlayElement);
+
 //Aggiungere un event listener al click del bottone
 
-//Recuperare elemento griglia con querySelector
+buttonPlayElement.addEventListener("click", function(){
 
-//Dichiarare variabile lato griglia
+    //Recuperare elemento griglia con querySelector
+    const gridElement = document.querySelector(".grid");
+    //console.log(gridElement);
 
-//Calcolare variabile numero di celle facendo lato x lato
+    //Dichiarare variabile lato griglia
+    let gridSide = 10;
+    //console.log(gridSide);
 
-//Aprire ciclo for che passa il numero delle celle
+    //Calcolare variabile numero di celle facendo lato x lato
+    let cellsNumber = gridSide * gridSide;
+    //console.log(cellsNumber);
 
-//Dichiarare numero che andrà dentro alle celle: indice + 1 per non partire da 0
+    //Aprire ciclo for che passa il numero delle celle
+    for (let i = 0; i < cellsNumber; i++) {
 
-//Creare elemento div (con dentro numero) con createElement
+        //Dichiarare numero che andrà dentro alle celle: indice + 1 per non partire da 0
+        let num = i + 1;
 
-//dargli classe "cell"
+        //Creare elemento div con createElement
+        const divCellElement = document.createElement("div");
 
-//inserire in elemento griglia con append
+        //dargli classe "cell"
+        divCellElement.classList.add("cell");
 
-//Aggiungere un event listener all'elemento div cella
+        //inserire numero in elemento
+        divCellElement.innerHTML = `${num}`
+        //console.log(divCellElement);
 
-//aggiungi classe bg-dark a elemento cella 
-//(toggle per aggiungerlo e toglierlo al click)
+        //inserire in elemento griglia con append
+        gridElement.append(divCellElement);
+
+        //Aggiungere un event listener all'elemento div cella
+
+        divCellElement.addEventListener("click", function(){
+
+            //aggiungi classe bg-dark a elemento cella 
+            //(toggle per aggiungerlo e toglierlo al click)
+            divCellElement.classList.toggle("bg-dark");
+
+        })
+    }
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -15,6 +15,7 @@ img {
 
 body {
     font-family: 'Roboto';
+    height: 100vh;
 }
 
 .page-header, .page-footer {
@@ -26,7 +27,7 @@ body {
 }
 
 .wrapper {
-    padding: 50px;
+    padding: 35px;
 }
 
 .container {
@@ -67,6 +68,7 @@ body {
 
 main {
     background-color: rgb(144, 255, 255);
+    height: 80%;
 }
 
 .bg-dark {
