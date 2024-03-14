@@ -76,9 +76,9 @@ function createGrid(gridSide) {
         //Creare elemento div con createElement
         const divCellElement = document.createElement("div");
 
-        //dargli classe "cell" e classe larghezza per il suo lato
+        //dargli classe "cell" e stile larghezza per il suo lato
         divCellElement.classList.add("cell");
-        divCellElement.classList.add(`width-${gridSide}`);
+        divCellElement.style.width = `calc(100% / ${gridSide}`;
 
         //inserire numero in elemento
         divCellElement.innerHTML = `${num}`
